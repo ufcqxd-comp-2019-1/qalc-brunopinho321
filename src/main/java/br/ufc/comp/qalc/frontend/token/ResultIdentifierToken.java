@@ -27,6 +27,15 @@ public class ResultIdentifierToken extends Token {
     public void interpretAttributes() {
         // TODO Se o lexema ainda existir, desconsiderar o `$` e interpretar o resto como um long,
         //      atribuindo ao campo `resultNumber`.
+        if(stringValue != null){
+            if(stringValue.charAt(0) == '$' || stringValue.charAt(0) == '?'){
+                resultNumber = Long.parseLong(stringValue.substring(1));
+            }
+            else{
+                resultNumber = Long.parseLong(stringValue);
+            }
+            stringValue = stringValue.substring(1);
+        }
     }
 
     @Override
