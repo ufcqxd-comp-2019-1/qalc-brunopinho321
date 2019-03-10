@@ -179,6 +179,11 @@ public class Scanner {
             source.advance();
             return new SemiToken(currentLine, lexemeStart, lexeme.toString());
         }
+        else{
+            //source.setCurrentColumn(source.getCurrentColumn() + 1);
+            source.advance();
+            getNextToken();
+        }
         // TODO Recuperação de erros.
 
         return null;

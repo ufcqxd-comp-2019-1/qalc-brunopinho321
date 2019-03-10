@@ -129,6 +129,9 @@ public class Source {
      *
      * @throws IOException caso ocorra um erro ao fechar a entrada.
      */
+    public void setCurrentColumn(long currentColumn){
+        this.currentColumn = currentColumn;
+    }
     public void close() throws IOException {
         if (reader != null) {
             try {
